@@ -17,7 +17,12 @@ class ResultFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "first_subject" => $this->faker->randomElement(['angielski', 'matematyka', 'polski']),
+            "second_subject" => $this->faker->randomElement(['angielski', 'matematyka', 'polski']),
+            "third_subject" => $this->faker->randomElement(['angielski', 'matematyka', 'polski']),
+            "first_percent" => $this->faker->numberBetween(0,100),
+            "second_percent" => $this->faker->numberBetween(0,100),
+            "third_percent" => $this->faker->numberBetween(0,100),
         ];
     }
 }

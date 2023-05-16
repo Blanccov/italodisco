@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Departament;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,8 @@ class StudentDepartamentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            // "student_id" => Student::factory(),
+            // "departament_id" => Departament::factory(),
         ];
     }
 }

@@ -14,8 +14,8 @@ class Student extends Model
         return $this->hasOne(Address::class);
     }
 
-    public function students_departaments(){
-        return $this->belongsTo(Student_departament::class);
+    public function departaments(){
+        return $this->belongsToMany(Departament::class, 'student_departments');
     }
 
     public function results(){
@@ -24,5 +24,9 @@ class Student extends Model
 
     public function users(){
         return $this->belongsTo(User::class);
+    }
+
+    public function roles(){
+        return $this->belongsTo(Role::class);
     }
 }

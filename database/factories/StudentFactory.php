@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Address;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -25,7 +26,7 @@ class StudentFactory extends Factory
             'email' => $this->faker->email(),
             'age' => $this->faker->numberBetween(18,30),
             'phone' => $this->faker->phoneNumber(),
-            'address_id' => Student::factory(),
+            'address_id' => Address::factory(),
         ];
     }
 }

@@ -9,11 +9,5 @@ class Student_departament extends Model
 {
     use HasFactory;
 
-    public function students(){
-        return $this->hasMany(Student::class);
-    }
-
-    public function students_departaments(){
-        return $this->hasMany(Departament::class);
-    }
+  //
 }

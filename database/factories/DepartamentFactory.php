@@ -16,8 +16,14 @@ class DepartamentFactory extends Factory
      */
     public function definition(): array
     {
+        $dep_name = $this->faker->randomElement(['A','B']);
+        $dep_field = 'A' ? $this->faker->randomElement(['Informatyka',"Architekruta"]) : $this->faker->randomElement(['Pilotaż', 'Zarządzanie']);
+
         return [
-            //
+            "name" => $dep_name,
+            "field" => $dep_field,
+            "places" => $this->faker->numberBetween(50,100),
+
         ];
     }
 }
