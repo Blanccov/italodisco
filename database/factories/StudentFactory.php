@@ -28,7 +28,6 @@ class StudentFactory extends Factory
             'age' => $this->faker->numberBetween(18,30),
             'phone' => $this->faker->numberBetween(20,40),
             'address_id' => Address::factory(),
-            'result_id' => Result::factory(),
         ];
     }
 }
