@@ -3,7 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Address;
-use App\Models\Student;
+use App\Models\Departament;
+use App\Models\Result;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,11 +23,12 @@ class StudentFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'lastname' => $this->faker->lastName(),
-            'pesel' => $this->faker->creditCardNumber(),
+            'pesel' => $this->faker->numberBetween(10,20),
             'email' => $this->faker->email(),
             'age' => $this->faker->numberBetween(18,30),
-            'phone' => $this->faker->phoneNumber(),
+            'phone' => $this->faker->numberBetween(20,40),
             'address_id' => Address::factory(),
+            'result_id' => Result::factory(),
         ];
     }
 }

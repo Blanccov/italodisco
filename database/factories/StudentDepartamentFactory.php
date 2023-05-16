@@ -19,8 +19,8 @@ class StudentDepartamentFactory extends Factory
     public function definition(): array
     {
         return [
-            // "student_id" => Student::factory(),
-            // "departament_id" => Departament::factory(),
+            "student_id" => Student::factory(),
+            "departament_id" => Departament::factory(),
         ];
     }
 }

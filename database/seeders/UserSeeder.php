@@ -2,27 +2,32 @@
 
 namespace Database\Seeders;
 
-use App\Models\Student;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
-class StudentSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Student::factory()
+
+        User::factory()
             ->count(25)
             ->create();
-    }
-    // Student::insert(
+
+        // User::insert(
         //     [
         //         [
-        //             'name' => 'Jan', 'lastname' => 'Kowalski', 'pesel' => 9999999, 'email' => 'jan@emial.com', 'age' => 22, 'phone' => 999999999
+        //             'name' => 'Jan', 'email' => 'jan@email.com', 'password' => Hash::make('1234'),
+        //             'student_id' => 1, 'role_id' => 1,
         //         ],
+
 
         //     ]
         // );
+    }
 }
