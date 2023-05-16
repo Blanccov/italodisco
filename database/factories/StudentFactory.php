@@ -23,10 +23,10 @@ class StudentFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'lastname' => $this->faker->lastName(),
-            'pesel' => $this->faker->numberBetween(10,20),
+            'pesel' => $this->faker->numberBetween(00000000000,99999999999),
             'email' => $this->faker->email(),
             'age' => $this->faker->numberBetween(18,30),
-            'phone' => $this->faker->numberBetween(20,40),
+            'phone' => $this->faker->phoneNumber(),
             'address_id' => Address::factory(),
         ];
     }

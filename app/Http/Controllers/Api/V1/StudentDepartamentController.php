@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Role;
-use App\Http\Requests\StoreRoleRequest;
-use App\Http\Requests\UpdateRoleRequest;
+use App\Models\Student_departament;
+use App\Http\Requests\StoreStudent_departamentRequest;
+use App\Http\Requests\UpdateStudent_departamentRequest;
+use App\Http\Controllers\Controller;
 
-class RoleController extends Controller
+class StudentDepartamentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRoleRequest $request)
+    public function store(StoreStudent_departamentRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Role $role)
+    public function show(Student_departament $student_departament)
     {
         //
     }
@@ -43,7 +44,7 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Role $role)
+    public function edit(Student_departament $student_departament)
     {
         //
     }
@@ -51,7 +52,7 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRoleRequest $request, Role $role)
+    public function update(UpdateStudent_departamentRequest $request, Student_departament $student_departament)
     {
         //
     }
@@ -59,7 +60,7 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Role $role)
+    public function destroy(Student_departament $student_departament)
     {
         //
     }

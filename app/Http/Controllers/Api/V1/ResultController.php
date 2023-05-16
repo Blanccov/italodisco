@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Student_departament;
-use App\Http\Requests\StoreStudent_departamentRequest;
-use App\Http\Requests\UpdateStudent_departamentRequest;
+use App\Models\Result;
+use App\Http\Requests\StoreResultRequest;
+use App\Http\Requests\UpdateResultRequest;
+use App\Http\Controllers\Controller;
 
-class StudentDepartamentController extends Controller
+class ResultController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class StudentDepartamentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStudent_departamentRequest $request)
+    public function store(StoreResultRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class StudentDepartamentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Student_departament $student_departament)
+    public function show(Result $result)
     {
         //
     }
@@ -43,7 +44,7 @@ class StudentDepartamentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Student_departament $student_departament)
+    public function edit(Result $result)
     {
         //
     }
@@ -51,7 +52,7 @@ class StudentDepartamentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStudent_departamentRequest $request, Student_departament $student_departament)
+    public function update(UpdateResultRequest $request, Result $result)
     {
         //
     }
@@ -59,7 +60,7 @@ class StudentDepartamentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student_departament $student_departament)
+    public function destroy(Result $result)
     {
         //
     }

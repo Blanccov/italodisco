@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Departament;
-use App\Http\Requests\StoreDepartamentRequest;
-use App\Http\Requests\UpdateDepartamentRequest;
+use App\Models\Student;
+use App\Http\Requests\StoreStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
+use App\Http\Controllers\Controller;
 
-class DepartamentController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return Student::all();
     }
 
     /**
@@ -27,7 +28,7 @@ class DepartamentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDepartamentRequest $request)
+    public function store(StoreStudentRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class DepartamentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Departament $departament)
+    public function show(Student $student)
     {
         //
     }
@@ -43,7 +44,7 @@ class DepartamentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Departament $departament)
+    public function edit(Student $student)
     {
         //
     }
@@ -51,7 +52,7 @@ class DepartamentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDepartamentRequest $request, Departament $departament)
+    public function update(UpdateStudentRequest $request, Student $student)
     {
         //
     }
@@ -59,7 +60,7 @@ class DepartamentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Departament $departament)
+    public function destroy(Student $student)
     {
         //
     }

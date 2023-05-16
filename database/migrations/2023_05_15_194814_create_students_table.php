@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
-            $table->integer('pesel');
+            $table->string('pesel');
             $table->string('email');
             $table->integer('age');
-            $table->integer('phone');
+            $table->string('phone');
 
         });
     }

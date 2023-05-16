@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Result;
-use App\Http\Requests\StoreResultRequest;
-use App\Http\Requests\UpdateResultRequest;
+use App\Models\Role;
+use App\Http\Requests\StoreRoleRequest;
+use App\Http\Requests\UpdateRoleRequest;
+use App\Http\Controllers\Controller;
 
-class ResultController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class ResultController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreResultRequest $request)
+    public function store(StoreRoleRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class ResultController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Result $result)
+    public function show(Role $role)
     {
         //
     }
@@ -43,7 +44,7 @@ class ResultController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Result $result)
+    public function edit(Role $role)
     {
         //
     }
@@ -51,7 +52,7 @@ class ResultController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateResultRequest $request, Result $result)
+    public function update(UpdateRoleRequest $request, Role $role)
     {
         //
     }
@@ -59,7 +60,7 @@ class ResultController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Result $result)
+    public function destroy(Role $role)
     {
         //
     }
