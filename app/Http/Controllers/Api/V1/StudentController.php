@@ -6,16 +6,28 @@ use App\Models\Student;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\StudentResource;
+use App\Http\Resources\V1\StudentCollection;
+use App\Services\V1\StudentQuery;
+use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        return Student::all();
+    public function index(Request $request)
+{
+    $filter = new StudentQuery();
+    $queryItems = $filter->transform($request);
+
+    if (count($queryItems) == 0) {
+        return new StudentCollection(Student::paginate());
+    } else {
+        return new StudentCollection(Student::where($queryItems)->paginate());
     }
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +50,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return new StudentResource($student);
     }
 
     /**
