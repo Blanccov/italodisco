@@ -10,6 +10,6 @@ class Departament extends Model
     use HasFactory;
 
     public function students(){
-        return $this->belongsToMany(Student::class, 'student_departments');
+        return $this->belongsToMany(Student::class, 'student_departaments', 'departaments_id', 'studetns_id');
     }
 }

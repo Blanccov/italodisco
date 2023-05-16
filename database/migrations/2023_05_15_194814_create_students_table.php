@@ -20,11 +20,7 @@ return new class extends Migration
             $table->integer('age');
             $table->integer('phone');
 
-            // $table->unsignedBigInteger('address_id');
-            // $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade');
-            // $table->unsignedBigInteger('results_id');
-            // $table->foreign('results_id')->references('id')->on('results')->onDelete('cascade');
-            // $table->timestamps();
+
         });
     }
 

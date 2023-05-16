@@ -15,7 +15,7 @@ class Student extends Model
     }
 
     public function departaments(){
-        return $this->belongsToMany(Departament::class, 'student_departments');
+        return $this->belongsToMany(Departament::class, 'student_departaments', 'studetns_id', 'departaments_id');
     }
 
     public function results(){
