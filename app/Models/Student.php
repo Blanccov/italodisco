@@ -15,7 +15,7 @@ class Student extends Model
     }
 
     public function departaments(){
-        return $this->belongsToMany(Departament::class, 'student_departaments', 'studetn_id', 'departament_id');
+        return $this->belongsToMany(Departament::class, 'student_departaments', 'student_id', 'departament_id', 'result_id');
     }
 
     public function results(){
@@ -29,4 +29,6 @@ class Student extends Model
     public function roles(){
         return $this->belongsTo(Role::class);
     }
+
+    public $timestamps = false;
 }

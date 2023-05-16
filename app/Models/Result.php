@@ -10,6 +10,8 @@ class Result extends Model
     use HasFactory;
 
     public function results(){
-        return $this->belongsTo(Student::class);
+        return $this->belongsToMany(Student_departaments::class, 'student_departaments', 'studetn_id', 'departament_id', 'result_id');
     }
+
+    public $timestamps = false;
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('first_percent');
             $table->integer('second_percent');
             $table->integer('third_percent');
-            $table->timestamps();
+
         });
     }
 

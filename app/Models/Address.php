@@ -13,4 +13,6 @@ class Address extends Model
     public function students(){
         return $this->belongsTo(Student::class);
     }
+
+    public $timestamps = false;
 }

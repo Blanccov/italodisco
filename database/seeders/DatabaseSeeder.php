@@ -14,21 +14,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('roles')->insert([
-            'name' => "Admin",
-        ]);
+        // DB::table('roles')->insert([
+        //     'name' => "Admin",
+        // ]);
 
-        DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
-            // 'student_id' => random_int(10,20),
-            'role_id' => 1,
-        ]);
+        // DB::table('users')->insert([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10).'@gmail.com',
+        //     'password' => Hash::make('password'),
+        //     // 'student_id' => random_int(10,20),
+        //     'role_id' => 1,
+        // ]);
 
         $this->call([
             UserSeeder::class,
-            DepartamentSeeder::class,
             StudentDepartamentSeeder::class,
         ]);
     }

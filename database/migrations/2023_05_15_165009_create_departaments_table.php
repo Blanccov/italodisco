@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('field');
             $table->integer('places');
-            $table->timestamps();
+
         });
     }
 
