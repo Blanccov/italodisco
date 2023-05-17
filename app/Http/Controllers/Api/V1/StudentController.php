@@ -23,9 +23,9 @@ class StudentController extends Controller
         $filterItems = $filter->transform($request);
 
         if (count($filterItems) == 0) {
-            return new StudentCollection(Student::all()); //zamiast all może być paginate ale bez firefoxa troche ussles
+            return new StudentCollection(Student::paginate()); //zamiast all może być paginate ale bez firefoxa troche ussles
         } else {
-            $students = Student::where($filterItems)->all();
+            $students = Student::where($filterItems)->paginate();
 
             return new StudentCollection($students->appends($request->query()));
         }

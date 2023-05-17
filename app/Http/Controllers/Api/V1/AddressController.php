@@ -22,9 +22,9 @@ class AddressController extends Controller
         $filterItems = $filter->transform($request);
 
         if (count($filterItems) == 0) {
-            return new AddressCollection(Address::all());
+            return new AddressCollection(Address::paginate());
         } else {
-            $addresses = Address::where($filterItems)->all();
+            $addresses = Address::where($filterItems)->paginate();
 
             return new AddressCollection($addresses->appends($request->query()));
         }

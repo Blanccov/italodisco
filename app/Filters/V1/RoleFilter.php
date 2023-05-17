@@ -11,7 +11,7 @@ class RoleFilter extends ApiFilter {
     ];
 
     protected $columnMap = [
-        'name' => 'first_subject',
+        'name' => 'name',
     ];
 
     protected $operatorMap = [
