@@ -18,16 +18,18 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new StudentFilter();
-        $queryItems = $filter->transform($request);
 
-        if (count($queryItems) == 0) {
-            return new StudentCollection(Student::paginate());
+        $filter = new StudentFilter();
+        $filterItems = $filter->transform($request);
+
+        if (count($filterItems) == 0) {
+            return new StudentCollection(Student::all()); //zamiast all może być paginate ale bez firefoxa troche ussles
         } else {
-            $students = Student::where($queryItems)->paginate();
+            $students = Student::where($filterItems)->all();
 
             return new StudentCollection($students->appends($request->query()));
         }
+
     }
 
 

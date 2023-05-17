@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\StudentController;
 use App\Http\Controllers\Api\V1\AddressController;
+use App\Http\Controllers\Api\V1\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], function(){
     Route::apiResource('students', StudentController::class);
     Route::apiResource('addresses', AddressController::class);
+    Route::apiResource('users', UserController::class);
 });

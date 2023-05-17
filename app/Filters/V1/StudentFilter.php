@@ -6,9 +6,25 @@ use App\Filters\ApiFilter;
 use Illuminate\Http\Request;
 
 class StudentFilter extends ApiFilter {
-    protected $safeParms = ['age' => ['eq','gt','ne']];
+    protected $safeParms = [
+        'name' => ['eq', 'ne'],
+        'lastname' => ['eq', 'ne'],
+        'pesel' => ['eq', 'ne'],
+        'email' => ['eq', 'ne'],
+        'age' => ['eq', 'ne', 'lt', 'lte', 'gt', 'gte'],
+        'phone' => ['eq', 'ne'],
+        'addressId' => ['eq', 'ne', 'lt', 'lte', 'gt', 'gte'],
+    ];
 
-    protected $columnMap = ['age' => 'age'];
+    protected $columnMap = [
+        'name' => 'name',
+        'lastname' => 'lastname',
+        'pesel' => 'pesel',
+        'email' => 'email',
+        'age' => 'age',
+        'phone' => 'phone',
+        'addressId' => 'address_id'
+    ];
 
     protected $operatorMap = [
         'eq' => '=',

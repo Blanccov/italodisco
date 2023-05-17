@@ -19,12 +19,12 @@ class AddressController extends Controller
     public function index(Request $request)
     {
         $filter = new AddressFilter();
-        $queryItems = $filter->transform($request);
+        $filterItems = $filter->transform($request);
 
-        if (count($queryItems) == 0) {
-            return new AddressCollection(Address::paginate());
+        if (count($filterItems) == 0) {
+            return new AddressCollection(Address::all());
         } else {
-            $addresses = Address::where($queryItems)->paginate();
+            $addresses = Address::where($filterItems)->all();
 
             return new AddressCollection($addresses->appends($request->query()));
         }
