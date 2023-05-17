@@ -15,12 +15,13 @@ class ResultResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'firstSubject' => 'first_subject',
-            'secondSubject' => 'second_subcject',
-            'thirdSubject' => 'third_subject',
-            'firstPercent' => 'first_percent',
-            'secondPercent' => 'second_percent',
-            'thirdPercent' => 'third_percent'
+            'id' => $this->id,
+            'firstSubject' => $this->first_subject,
+            'secondSubject' => $this->second_subject,
+            'thirdSubject' => $this->third_subject,
+            'firstPercent' => $this->first_percent,
+            'secondPercent' => $this->second_percent,
+            'thirdPercent' => $this->third_percent,
         ];
     }
 }

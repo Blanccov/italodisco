@@ -15,9 +15,10 @@ class Student_departametnsResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'studentId' => 'student_id',
-            'departamentId' => 'departament_id',
-            'resultId' => 'result_id'
+            'id' => $this->id,
+            'studentId' => $this->student_id,
+            'departamentId' => $this->departament_id,
+            'resultId' => $this->result_id,
         ];
     }
 }

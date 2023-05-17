@@ -15,9 +15,10 @@ class DepartamentResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name' => 'name',
-            'field' => 'field',
-            'places' => 'places'
+            'id' => $this->id,
+            'name' => $this->name,
+            'field' => $this->field,
+            'places' => $this->places,
         ];
     }
 }
