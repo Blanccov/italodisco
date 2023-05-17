@@ -1,21 +1,15 @@
 <?php
 
-namespace App\Services\V1;
+namespace App\Filters;
 
 use Illuminate\Http\Request;
 
-class StudentQuery {
-    protected $safeParms = ['age' => ['eq','gt']];
+class ApiFilter {
+    protected $safeParms = [];
 
-    protected $columnMap = ['age' => 'age'];
+    protected $columnMap = [];
 
-    protected $operatorMap = [
-        'eq' => '=',
-        'lt' => '<',
-        'lte' => '<=',
-        'gt' => '>',
-        'gte' => '>='
-    ];
+    protected $operatorMap = [];
 
     public function transform(Request $request){
         $eloQuery = [];

@@ -8,15 +8,26 @@ use App\Http\Requests\UpdateAddressRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\AddressCollection;
 use App\Http\Resources\V1\AddressResource;
+use Illuminate\Http\Request;
+use App\Filters\V1\AddressFilter;
 
 class AddressController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new AddressCollection(Address::all());
+        $filter = new AddressFilter();
+        $queryItems = $filter->transform($request);
+
+        if (count($queryItems) == 0) {
+            return new AddressCollection(Address::paginate());
+        } else {
+            $addresses = Address::where($queryItems)->paginate();
+
+            return new AddressCollection($addresses->appends($request->query()));
+        }
     }
 
     /**

@@ -8,4 +8,6 @@ call php artisan migrate:fresh --seed
 
 call php artisan key:generate
 
+call npm install
+
 code .
